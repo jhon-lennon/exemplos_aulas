@@ -27,4 +27,14 @@ footer{
 div{
     text-align: center;
 }
+#imagem{
+
+   text-align: center;
+    border-radius: 120px;
+    width: 250px;
+    height: 250px;
+}
+#res{
+    text-align: center;
+}
     
