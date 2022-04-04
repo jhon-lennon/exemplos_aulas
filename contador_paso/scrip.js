@@ -7,10 +7,13 @@ function contar(){
     var res = document.getElementById('res')
 
     if(passo < 1){
-        window.alert('o passa nao pode ser menor 1. continuar considerando passo 1')
+        window.alert('o passa nao pode ser menor 1')
 
         passo = 1
-    }else if(quant < passo || quant < 1){
+        
+    } 
+    
+    if(quant < passo || quant < 1){
         window.alert('a quantidade nao pode ser menor que o passo e nao deve estar vazia')
         
     }else{
@@ -26,5 +29,6 @@ function contar(){
     }
     res.innerText = resutado+`\u{1F3C1}`
 }
+
 
 }
