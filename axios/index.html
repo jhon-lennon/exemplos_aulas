@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="no" >Nome: </p>
+<p id="ida">Idade: </p>
+<p id="al">Altura: </p>
+<p id="cas">casado: </p>
+<div id="erro"></div>
+
+
+
+   <script src="axios.min.js"></script> 
+
+
+<script>
+    var nome = document.getElementById('no')
+    var idade = document.getElementById('ida')
+    var altura = document.getElementById('al')
+    var casado = document.getElementById('cas')
+    var divErro = document.getElementById('erro');
+
+
+
+// Make a request for a user with a given ID
+axios.get('script.pp')
+  .then(function (response) {
+    // handle success
+    var nom = response.data.nome;
+    var idad = response.data.idade;
+    var altur = response.data.altura;
+    var casad = response.data.casado;
+    if(casad == false){
+        casad = 'Nao'
+    }else{
+        casad = 'sim'
+    }
+    nome.innerText += ` ${nom}`;
+    idade.innerText += ` ${idad}`;
+    altura.innerText += ` ${altur}`;
+    casado.innerText += ` ${casad}`;
+
+    console.log(nom, idad, altur, casad);
+  })
+  .catch(function (error) {
+    var res = document.createElement('p')
+    res.setAttribute('id', 'res')
+    res.innerText ='Nada encontrado'
+    divErro.appendChild(res)
+    console.log(error);
+  })
+  .then(function () {
+    
+  });
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,5 +1,5 @@
-const inicio = prompt("inicio");
-const fim = prompt("fim");
+var inicio = readline('inicio: ');
+var fim = readline('fim: ');
 
 function final(){
     console.log('fim');
