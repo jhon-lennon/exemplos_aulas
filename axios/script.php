@@ -10,7 +10,10 @@ $dados = [
 
 
 $dados = json_encode($dados);
+ 
+$res = $_POST['firstName'];
+
+echo $res;
 
 
-
-echo $dados;
+//echo $dados;

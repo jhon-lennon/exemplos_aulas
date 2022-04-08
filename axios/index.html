@@ -11,7 +11,11 @@
 <p id="ida">Idade: </p>
 <p id="al">Altura: </p>
 <p id="cas">casado: </p>
+<p id="estu">Estudando: </p>
+
 <div id="erro"></div>
+
+<button id="bt" onclick="entrar()">Entrar</button>
 
 
 
@@ -23,18 +27,35 @@
     var idade = document.getElementById('ida')
     var altura = document.getElementById('al')
     var casado = document.getElementById('cas')
+    var estudand = document.getElementById('estu');
     var divErro = document.getElementById('erro');
-
+    
+function entrar(){
+    console.log('entrou')
+    axios.post('script.php', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
 
 
 // Make a request for a user with a given ID
-axios.get('script.pp')
+axios.get('script.php')
   .then(function (response) {
     // handle success
     var nom = response.data.nome;
     var idad = response.data.idade;
     var altur = response.data.altura;
     var casad = response.data.casado;
+    var estudando = response.data.estudando;
+
+
     if(casad == false){
         casad = 'Nao'
     }else{
@@ -46,12 +67,18 @@ axios.get('script.pp')
     casado.innerText += ` ${casad}`;
 
     console.log(nom, idad, altur, casad);
+    for (var key in estudando) {
+       
+    estudand.innerHTML +=` ${estudando[key]}, `
+       console.log(estudando[key])
+    }
   })
   .catch(function (error) {
     var res = document.createElement('p')
     res.setAttribute('id', 'res')
     res.innerText ='Nada encontrado'
     divErro.appendChild(res)
+    
     console.log(error);
   })
   .then(function () {
@@ -63,6 +90,6 @@ axios.get('script.pp')
 
 </script>
 
-
+<script src="scriptjs.js"></script>
 </body>
 </html>
