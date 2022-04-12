@@ -17,12 +17,15 @@ console.log(nomes)
 console.log(Nnomes)
 
 //exemplo junçao---------------------------------------------------
+
 let animais1 = ['cachorro', 'gato']
 let animais2 = ['cavalo', 'zebra']
-
+//jantar os 2 arrays e adiciona a novo
 let animais = animais1.concat(animais2)
 
+//junta os dois e adiciona
 let maisAnimais = animais1.concat(animais2, 'capivara', 'porco')
+// tambem pode se feito assim ('capivara', 'porco', animais2)
 
 console.log(animais)
 console.log(maisAnimais)
