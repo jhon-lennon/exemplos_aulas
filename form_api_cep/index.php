@@ -24,6 +24,10 @@
                 <input type="text" name="" id="cep">
             </p>
             <p>
+                <label for="">Rua</label>
+                <input type="text" name="" id="rua">
+            </p>
+            <p>
                 <label for="">Estado</label>
                 <input type="text" name="" id="estado">
             </p>
@@ -42,11 +46,12 @@
      var estado = document.getElementById('estado')
      var cidade = document.getElementById('cidade')
      var cep = document.getElementById('cep')
+     var rua = document.getElementById('rua')
      
 
   function tes(){
 
-     console.log(cep.value)
+
 
      
      axios.get(`https://viacep.com.br/ws/${cep.value}/json/`, {
@@ -56,7 +61,9 @@
         console.log(response.data.localidade);
         estado.value= response.data.uf
         cidade.value= response.data.localidade
+        rua.value = response.data.logradouro
         document.getElementById('bairro').value = response.data.bairro
+        console.log(response.data)
 
       })
       .catch(function (error) {
