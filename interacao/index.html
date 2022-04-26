@@ -16,7 +16,7 @@
     <h1>Somar</h1>
     <input type="number" name="n1" id="tn1"> + 
     <input type="number" name="n2" id="tn2">
-    <button id="s" onclick="somar()">somar</button>
+    <button id="s" onclick="teste()">somar</button>
     <p id="r"></p>
 <script>
     function somar(){
@@ -28,6 +28,9 @@
         var resposta = document.getElementById('r')
         resposta.innerText =`A soma entre ${n1} e ${n2} é igual a: ${resultado} ! `
 
+    }
+    function teste(t){
+console.log(t)
     }
 </script>
     
