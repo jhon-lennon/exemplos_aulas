@@ -8,9 +8,9 @@ $pdo = new PDO(
 );
 
 
-//$sql = "INSERT INTO  axios (id, comentario) VALUES (:id, :coment)";
-//$stmt= $pdo->prepare($sql);
-//$stmt->execute([':id' => null, ':coment' =>$co]);
+$sql = "INSERT INTO  axios (id, comentario) VALUES (:id, :coment)";
+$stmt= $pdo->prepare($sql);
+$stmt->execute([':id' => null, ':coment' => $_POST['comentario']]);
 
 
 
@@ -24,6 +24,8 @@ $result = $user->fetchAll(PDO::FETCH_ASSOC);
 $result = json_encode($result);
 
 //echo $result;
- print_r($_REQUEST);
+print_r($result);
+
+ //print_r($_POST);
 
 ?>

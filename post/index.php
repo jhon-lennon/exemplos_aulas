@@ -9,9 +9,10 @@
  </head>
  <body>
      <script src="axios.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
      <div><input type="text" name="coment" id="coment" placeholder="comentario"> </div>
-     <div><button onclick="coment()">comentar</button></div><br><br><br>
+     <div><button onclick="aja()">comentar</button></div><br><br><br>
 
      <div id="co">
 
